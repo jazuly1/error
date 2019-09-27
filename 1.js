@@ -1,3 +1,18 @@
+/* i store data user before from vuex when user succes login */
+import { getLocalUser } from './helpers/auth';
+const user = getLocalUser();
+
+state : {
+    currentUser: user,   
+},
+    
+mutations : {
+   state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
+   localStorage.setItem("user", JSON.stringify(state.currentUser));
+}
+
+/* end data store.js */
+
 methods: {
     getData() {
 
